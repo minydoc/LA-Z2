@@ -6,7 +6,7 @@ public class AttachementGunMainDroite : MonoBehaviour {
 
 
 	private GameObject target;
-	private GameObject targetP;
+
 
 
 
@@ -24,7 +24,7 @@ public class AttachementGunMainDroite : MonoBehaviour {
 		if (target == null) {
 			//On récupère le gameobject avec le tag Camera position
 			target = GameObject.FindGameObjectWithTag ("Rhand");
-			targetP = GameObject.FindGameObjectWithTag ("vise");
+
 
 
 		} 
@@ -40,8 +40,6 @@ public class AttachementGunMainDroite : MonoBehaviour {
 
 			//On place la camera
 			transform.position =  new Vector3(x, y, z);
-			//on lui dit quoi regarder (l'orbit de jeu)
-			transform.LookAt (targetP.transform);
 
 
 
