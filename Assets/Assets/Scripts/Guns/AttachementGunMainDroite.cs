@@ -33,15 +33,18 @@ public class AttachementGunMainDroite : MonoBehaviour {
 	void LateUpdate (){
 		if (target != null) {
 
-			//On récupère la position à donner à la caméra (celle du gameobject Target)
+			//On récupère la position à donner à l'objet (celle du gameobject Target)
 			float x = target.transform.position.x;
 			float y = target.transform.position.y;
 			float z = target.transform.position.z;
 
-			//On place la camera
-			transform.position =  new Vector3(x, y, z);
+	
 
 
+			//On place l'objet
+			transform.position = new Vector3 (x, y, z);
+
+			//transform.Rotate (xr, yr, zr);
 
 
 		}
