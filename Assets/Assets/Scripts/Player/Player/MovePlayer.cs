@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MovePlayer : MonoBehaviour {
 
@@ -26,6 +27,10 @@ public class MovePlayer : MonoBehaviour {
 
 	//Variable pour type d'arme : pistoler : 1, fusil : 2, grenade : 3
 	public int typeArme;
+
+	//variable d'amre pour inventaire :
+	private bool PistolActiv = false;
+	private bool Ak47Active = false;
 
 	#endregion
 
@@ -103,21 +108,22 @@ public class MovePlayer : MonoBehaviour {
 
 		if (Physics.Raycast (ray, out hit, 10f)) {
 			Debug.DrawLine (Camera.main.transform.position, hit.point, Color.red);
-			Debug.Log ("Objet à ramasser puis a supprimer :" + hit.collider.name);
+
 
 			if (hit.collider.name == "Pistol"){
 			Destroy (hit.transform.gameObject);
-				if (Pistolet.active == false) {
+				if ((Pistolet.active == false) && (mainpleine == false)) {
 					Pistolet.active = true;
-					Debug.Log ("Pistolet ramassé");
+					mainpleine = true;
 				}
 			}
 
 			if (hit.collider.name == "Ak-47"){
 				Destroy (hit.transform.gameObject);
-				if (Ak47.active == false) {
+				if ((Ak47.active == false)&& (mainpleine == false)) {
 					Ak47.active = true;
-					Debug.Log ("AK47 ramassé");
+					mainpleine = true;
+
 				}
 			}
 		}
