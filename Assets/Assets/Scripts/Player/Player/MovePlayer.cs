@@ -29,8 +29,8 @@ public class MovePlayer : MonoBehaviour {
 	public int typeArme;
 
 	//variable d'amre pour inventaire :
-	private bool PistolActiv = false;
-	private bool Ak47Active = false;
+	public bool PistolActiv = false;
+	public bool Ak47Active = false;
 
 	#endregion
 
@@ -50,6 +50,8 @@ public class MovePlayer : MonoBehaviour {
 		Ak47 = GameObject.FindGameObjectWithTag ("Ak47");
 		Debug.Log ("trouvé");
 		Ak47.active = false;
+
+
 	}
 	
 	// Update is called once per frame
@@ -114,7 +116,9 @@ public class MovePlayer : MonoBehaviour {
 			Destroy (hit.transform.gameObject);
 				if ((Pistolet.active == false) && (mainpleine == false)) {
 					Pistolet.active = true;
+					PistolActiv = true;
 					mainpleine = true;
+
 				}
 			}
 
@@ -122,6 +126,7 @@ public class MovePlayer : MonoBehaviour {
 				Destroy (hit.transform.gameObject);
 				if ((Ak47.active == false)&& (mainpleine == false)) {
 					Ak47.active = true;
+					Ak47Active = true;
 					mainpleine = true;
 
 				}

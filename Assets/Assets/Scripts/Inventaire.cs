@@ -6,7 +6,6 @@ using UnityEngine;
 public class Inventaire : MonoBehaviour {
 
 	bool activation = false;
-	public GameObject Player;
 
 
 	// Use this for initialization
@@ -19,12 +18,6 @@ public class Inventaire : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.I)) {
 			activation = !activation;
 			GetComponent<Canvas> ().enabled = activation;
-
-			if (!activation) {
-				Player.GetComponent<MovePlayer> ().enabled = true;
-			} else {
-				Player.GetComponent<MovePlayer> ().enabled = false;
-			}
 		}
 
 
